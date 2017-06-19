@@ -1,0 +1,12 @@
+import java.math.*;
+
+public class Principal {
+	public static void main(String[] args) {
+		int d1;
+		int d2;
+		int d3;
+		
+		System.out.println("Les deux dés jetés ont donné : ");
+		d1 = random();
+	}
+}
