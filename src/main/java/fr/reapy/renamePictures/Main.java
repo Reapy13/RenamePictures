@@ -10,7 +10,7 @@ import fr.reapy.renamePictures.service.UtilService;
  * Main class of the software.
  *
  * @author Reapy
- * @version 1.00, 06/20/17
+ * @version 1.02, 06/20/17
  */
 public class Main {
 
@@ -24,7 +24,7 @@ public class Main {
 	/**
 	 * Counts the number of pictures with the same creation date to have a different name for all pictures with the same creation date.
 	 */
-	private static int counter = 0;
+	private static int id = 1;
 
 	// Methods
 
@@ -45,7 +45,7 @@ public class Main {
 				String date = new SimpleDateFormat("yyyyMMdd_hhmmss").format(new Date(file.lastModified()));
 
 				/* Renaming of the file to the desired format. */
-				file.renameTo(new File(path + "IMG_" + date + ".jpg"));
+				file.renameTo(new File(path + "IMG_" + date + "_" + id++ + ".jpg"));
 			}
 		}
 	}
