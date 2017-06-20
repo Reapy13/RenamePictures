@@ -6,7 +6,7 @@ import java.io.File;
  * This class provides methods working on files.
  *
  * @author Reapy
- * @version 1.01, 06/20/17
+ * @version 1.03, 06/20/17
  */
 public abstract class UtilService {
 
@@ -27,10 +27,11 @@ public abstract class UtilService {
 		try {
 			/* Browsing the path from the end to keep the extension. */
 			for (int i = pathSize - 1; path[i] != '.'; i--) {
-				extension[3 - (pathSize - 1 - i)] = path[i];
+				/* The path is browsing from the end, the extension is adding by the end too. It doesn't matter if the char[] is not full, the return has no spaces before and after the String. */
+				extension[5 - (pathSize - 1 - i)] = path[i];
 			}
 		} catch (ArrayIndexOutOfBoundsException e) {
-			System.out.println("L'extension fait plus de 4 caractères.");
+			System.out.println("L'extension fait plus de 5 caractères.");
 			e.printStackTrace();
 			return "error";
 		}
