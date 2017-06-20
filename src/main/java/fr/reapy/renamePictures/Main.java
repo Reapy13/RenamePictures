@@ -3,6 +3,8 @@ package fr.reapy.renamePictures;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import fr.reapy.renamePictures.service.FormatPicturesEnumService;
+import fr.reapy.renamePictures.service.UtilService;
 
 /**
  * Main class of the software.
@@ -10,7 +12,7 @@ import java.util.Date;
  * @author Reapy
  * @version 1.00, 06/20/17
  */
-public class App {
+public class Main {
 
 	// Fields
 
@@ -38,7 +40,7 @@ public class App {
 
 		/* Browsing the files. */
 		for (File file : directory.listFiles()) {
-			if (!file.isDirectory()) {
+			if (!file.isDirectory() && FormatPicturesEnumService.validFormat(UtilService.obtainExtension(file))) {
 				/* Getting creation date with the desired format. */
 				String date = new SimpleDateFormat("yyyyMMdd_hhmmss").format(new Date(file.lastModified()));
 
