@@ -1,32 +1,49 @@
 package fr.reapy.renamePictures;
 
 import java.io.File;
-import java.nio.file.Path;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
+/**
+ * Main class of the software.
+ *
+ * @author Reapy
+ * @version 1.00, 06/20/17
+ */
 public class App {
 
 	// Fields
 
-	public final static String path = "D:/Pictures";
+	/**
+	 * Path of the directory that contains the pictures to rename.
+	 */
+	public final static String path = "E:/";
 
+	/**
+	 * Counts the number of pictures with the same creation date to have a different name for all pictures with the same creation date.
+	 */
 	private static int counter = 0;
 
 	// Methods
 
+	/**
+	 * Main method of the software.
+	 *
+	 * @param args
+	 *           not used
+	 */
 	public static void main(String[] args) {
-		/* Ouverture du dossier Pictures. */
-		File pictures = new File(path);
+		/* Opening Pictures directory. */
+		File directory = new File(path);
 
-		/* Parcours des photos. */
-		for (File pictureFile : pictures.listFiles()) {
-			if (!pictureFile.isDirectory()) {
-				/* Transformation en Path pour récupérer la date de création. */
-				Path picturePath = pictureFile.toPath();
-				/* try { /* Récupération de la date de création. */
-				/* FileTime creationTime = (FileTime) Files.getAttribute(picturePath, "basic:creationTime", LinkOption.NOFOLLOW_LINKS); /* Renommage du fichier en utilisant le File et non le
-				 * Path. */
-				/* pictureFile.renameTo(new File(path + "/IMG_" + String.valueOf(creationTime.toMillis()) + "_" + String.valueOf(++counter) + ".jpg")); } catch (IOException e) {
-				 * e.printStackTrace(); } */
+		/* Browsing the files. */
+		for (File file : directory.listFiles()) {
+			if (!file.isDirectory()) {
+				/* Getting creation date with the desired format. */
+				String date = new SimpleDateFormat("yyyyMMdd_hhmmss").format(new Date(file.lastModified()));
+
+				/* Renaming of the file to the desired format. */
+				file.renameTo(new File(path + "IMG_" + date + ".jpg"));
 			}
 		}
 	}
