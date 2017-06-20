@@ -3,8 +3,8 @@ package fr.reapy.renamePictures;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import src.main.java.fr.reapy.renamePictures.service.FormatPicturesEnumService;
-import src.main.java.fr.reapy.renamePictures.service.UtilService;
+import fr.reapy.renamePictures.service.FormatPicturesEnumService;
+import fr.reapy.renamePictures.service.UtilService;
 
 /**
  * Main class of the software.
