@@ -3,14 +3,14 @@ package fr.reapy.renamePictures;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import fr.reapy.renamePictures.service.FormatPicturesEnumService;
-import fr.reapy.renamePictures.service.UtilService;
+import src.main.java.fr.reapy.renamePictures.service.FormatPicturesEnumService;
+import src.main.java.fr.reapy.renamePictures.service.UtilService;
 
 /**
  * Main class of the software.
  *
  * @author Reapy
- * @version 1.02, 06/20/17
+ * @version 1.03, 06/20/17
  */
 public class Main {
 
