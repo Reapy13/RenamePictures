@@ -1,1 +1,6 @@
 /bin/
+/.recommenders/
+/.settings/
+/.metadata/
+/.classpath
+/.project
