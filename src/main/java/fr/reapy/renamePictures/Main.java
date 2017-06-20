@@ -19,7 +19,7 @@ public class Main {
 	/**
 	 * Path of the directory that contains the pictures to rename.
 	 */
-	public final static String path = "E:/";
+	public final static String path = "D:/Pictures/";
 
 	/**
 	 * Counts the number of pictures with the same creation date to have a different name for all pictures with the same creation date.
