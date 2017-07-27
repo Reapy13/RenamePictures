@@ -5,6 +5,7 @@ package fr.reapy.renamePictures.enumeration;
  * 
  * @author Reapy
  *	@version 1.02, 07/27/17
+ * @since 1.02
  */
 public enum FormatVideosEnum {
 	AVI,

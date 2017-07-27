@@ -1,4 +1,4 @@
-package fr.reapy.renamePictures.service;
+package fr.reapy.renamePictures.util;
 
 import fr.reapy.renamePictures.enumeration.FormatPicturesEnum;
 import fr.reapy.renamePictures.enumeration.FormatVideosEnum;
@@ -9,7 +9,7 @@ import fr.reapy.renamePictures.enumeration.FormatVideosEnum;
  * @author Reapy
  * @version 1.02, 07/27/17
  */
-public abstract class FormatEnumService {
+public abstract class FormatEnumUtil {
 
 	// Methods
 
@@ -25,7 +25,6 @@ public abstract class FormatEnumService {
 			FormatPicturesEnum.valueOf(name.toUpperCase());
 			return true;
 		} catch (IllegalArgumentException e) {
-			e.printStackTrace();
 			return false;
 		}
 	}
@@ -43,7 +42,6 @@ public abstract class FormatEnumService {
 			FormatVideosEnum.valueOf(name.toUpperCase());
 			return true;
 		} catch (IllegalArgumentException e) {
-			e.printStackTrace();
 			return false;
 		}
 	}
