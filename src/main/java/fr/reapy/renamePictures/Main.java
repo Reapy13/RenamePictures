@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import fr.reapy.renamePictures.util.FormatEnumUtil;
+import fr.reapy.renamePictures.gui.Window;
 import fr.reapy.renamePictures.util.FileUtil;
 
 /**
@@ -49,8 +50,9 @@ public class Main {
 	 *           not used
 	 */
 	public static void main(String[] args) {
-		renamePictures();
-		renameVideos();
+		Window window = new Window();
+//		renamePictures();
+//		renameVideos();
 	}
 	
 	/**
