@@ -1,7 +1,5 @@
 package fr.reapy.renamePictures.gui;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.JFileChooser;
 
 /**
@@ -11,7 +9,7 @@ import javax.swing.JFileChooser;
  * @version 1.03, 07/28/17
  * @since 1.03
  */
-public class BrowsingDirectory extends JFileChooser implements ActionListener {
+public class BrowsingDirectory extends JFileChooser {
 
 	// Constructors
 
@@ -20,11 +18,5 @@ public class BrowsingDirectory extends JFileChooser implements ActionListener {
 	 */
 	public BrowsingDirectory() {
 		super();
-	}
-
-	// Methods
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
 	}
 }

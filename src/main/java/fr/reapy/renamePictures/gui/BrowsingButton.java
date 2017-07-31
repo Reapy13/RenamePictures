@@ -32,7 +32,7 @@ public class BrowsingButton extends JButton implements ActionListener {
 		BrowsingDirectory fileChooser = new BrowsingDirectory();
 
 		window.setVisible(true);
-		window.setSize(400, 400);
+		window.setSize(600, 600);
 		window.setLocationRelativeTo(null);
 		window.setLayout(new BorderLayout());
 		window.setAlwaysOnTop(true);

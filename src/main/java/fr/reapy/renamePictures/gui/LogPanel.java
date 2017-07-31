@@ -10,7 +10,7 @@ import javax.swing.JPanel;
  * @version 1.03, 07/28/17
  * @since 1.03
  */
-public class TextPanel extends JPanel {
+public class LogPanel extends JPanel {
 
 	// Fields
 
@@ -19,7 +19,7 @@ public class TextPanel extends JPanel {
 	/**
 	 * Constructor which defines a TextPanel.
 	 */
-	public TextPanel() {
+	public LogPanel() {
 		super();
 		this.setBackground(Color.WHITE);
 	}

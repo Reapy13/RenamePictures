@@ -1,9 +1,10 @@
 package fr.reapy.renamePictures.gui;
 
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
@@ -51,17 +52,17 @@ public class Window extends JFrame {
 	/**
 	 * Panel for the logs.
 	 */
-	private TextPanel logTextPanel;
+	private LogPanel logTextPanel;
 	
 	/**
 	 * First log.
 	 */
-	private TextLabel logTextLabel1;
+	private LogArea logTextLabel1;
 	
 	/**
 	 * Second log.
 	 */
-	private TextLabel logTextLabel2;
+	private LogArea logTextLabel2;
 	
 	// Constructors
 
@@ -75,9 +76,9 @@ public class Window extends JFrame {
 		GridBagLayout gbl = new GridBagLayout();
 		GridBagConstraints gbc = new GridBagConstraints();
 		browsingButton = new BrowsingButton();
-		logTextPanel = new TextPanel();
-		logTextLabel1 = new TextLabel("Log 1 : Bon");
-		logTextLabel2 = new TextLabel("Log 2 : Tres bon.");
+//		logTextPanel = new TextPanel();
+		logTextLabel1 = new LogArea("Log 1 : Bon\nTres Bon.");
+//		logTextLabel2 = new TextLabel("Log 2 : Tres bon.");
 
 		/* Window properties. */
 		this.setVisible(true);
@@ -87,25 +88,36 @@ public class Window extends JFrame {
 		this.setLayout(gbl);
 		
 		browsingButton.setVisible(true);
+		
+		FileText fileText = new FileText();
+		fileText.setPreferredSize(new Dimension(100, 50));
 
-		logTextPanel.setPreferredSize(new Dimension(560, 100));
-		logTextPanel.setLayout(new GridLayout(3, 1));
+		logTextLabel1.setPreferredSize(new Dimension(560, 100));
+		logTextLabel1.setEditable(false);
+		logTextLabel1.setBackground(Color.WHITE);
+		logTextLabel1.setFont(new Font("Log", Font.BOLD, 13));
+//		logTextLabel1.setalign
+//		logTextPanel.setPreferredSize(new Dimension(560, 100));
+//		logTextPanel.setLayout(new GridLayout(3, 1));
 
 		/* Adding components to the window. */
-		logTextPanel.add(logTextLabel1);
-		logTextPanel.add(logTextLabel2);
+//		logTextPanel.add(logTextLabel1);
+//		logTextPanel.add(logTextLabel2);
 		
 		gbc.gridx = 0;
 		gbc.gridy = 0;
 		gbc.gridwidth = 1;
 		gbc.gridheight = 1;
 		gbc.weighty = 100;
+		this.getContentPane().add(fileText, gbc);
+		gbc.gridx = 1;
 		gbc.fill = GridBagConstraints.REMAINDER;
 		this.getContentPane().add(browsingButton, gbc);
 		
+		gbc.gridx = 0;
 		gbc.gridy = 1;
 		gbc.weighty = 5;
-		this.getContentPane().add(logTextPanel, gbc);
+		this.getContentPane().add(logTextLabel1, gbc);
 	}
 
 	// Methods
