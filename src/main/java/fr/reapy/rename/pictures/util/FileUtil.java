@@ -1,4 +1,4 @@
-package fr.reapy.renamePictures.util;
+package fr.reapy.rename.pictures.util;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

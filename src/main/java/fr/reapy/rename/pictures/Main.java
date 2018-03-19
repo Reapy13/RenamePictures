@@ -1,13 +1,14 @@
-package fr.reapy.renamePictures;
+package fr.reapy.rename.pictures;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import fr.reapy.renamePictures.util.FormatEnumUtil;
-import fr.reapy.renamePictures.gui.Window;
-import fr.reapy.renamePictures.util.FileUtil;
+
+import fr.reapy.rename.pictures.gui.Window;
+import fr.reapy.rename.pictures.util.FileUtil;
+import fr.reapy.rename.pictures.util.FormatEnumUtil;
 
 /**
  * Main class of the software.
@@ -23,18 +24,18 @@ public class Main {
 	 * Path of the directory that contains the pictures to rename.
 	 */
 	//	private final static String picturesPath = "D:/Pictures/";
-	private final static String picturesPath = "C:/Users/hfauchery/Desktop/";
+	private final static String PICTURES_PATH = "C:/Users/hfauchery/Desktop/";
 
 	/**
 	 * Path of the directory that contains the videos to rename.
 	 */
 	//	private final static String videosPath = "D:/Videos/";
-	private final static String videosPath = "C:/Users/hfauchery/Desktop/";
+	private final static String VIDEOS_PATH = "C:/Users/hfauchery/Desktop/";
 
 	/**
 	 *  Date Format for the file name.
 	 */
-	private final static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd-HHmmss");
+	private final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyyMMdd-HHmmss");
 
 	/**
 	 * Logger of this class.
@@ -58,9 +59,9 @@ public class Main {
 	/**
 	 * Rename the pictures.
 	 */
-	public static void renamePictures() {
+	public void renamePictures() {
 		/* Opening pictures directory. */
-		File directory = new File(picturesPath);
+		File directory = new File(PICTURES_PATH);
 		
 		int id = 1;
 		
@@ -69,10 +70,15 @@ public class Main {
 			String extension = FileUtil.obtainExtension(file.getName());
 			if (!file.isDirectory() && FormatEnumUtil.validPicturesFormat(extension)) {
 				/* Getting creation date with the desired format. */
-				String date = dateFormat.format(new Date(file.lastModified()));
+				String date = DATE_FORMAT.format(new Date(file.lastModified()));
 
 				/* Renaming the file to the desired format. */
-				file.renameTo(new File(picturesPath + "IMG_" + date + "-" + id++ + "." + extension.toLowerCase()));
+				boolean hasSuccedded = file.renameTo(new File(PICTURES_PATH + "IMG_" + date + "-" + id++ + "." + extension.toLowerCase()));
+				
+				if (!hasSuccedded) {
+					LOGGER.warning("The file " + file.getPath() + " has not been renamed.");
+				}
+				
 				LOGGER.log(Level.INFO, "Renommage du fichier " + file.getName() + ".");
 			}
 		}
@@ -81,9 +87,9 @@ public class Main {
 	/**
 	 * Rename the videos.
 	 */
-	public static void renameVideos() {
+	public void renameVideos() {
 		/* Opening videos directory. */
-		File directory = new File(videosPath);
+		File directory = new File(VIDEOS_PATH);
 
 		int id = 1;
 		
@@ -92,10 +98,10 @@ public class Main {
 			String extension = FileUtil.obtainExtension(file.getName());
 			if (!file.isDirectory() && FormatEnumUtil.validVideosFormat(extension)) {
 				/* Getting creation date with the desired format. */
-				String date = dateFormat.format(new Date(file.lastModified()));
+				String date = DATE_FORMAT.format(new Date(file.lastModified()));
 
 				/* Renaming the file to the desired format. */
-				file.renameTo(new File(videosPath + "IMG_" + date + "-" + id++ + "." + extension.toLowerCase()));
+				file.renameTo(new File(VIDEOS_PATH + "IMG_" + date + "-" + id++ + "." + extension.toLowerCase()));
 				LOGGER.log(Level.INFO, "Renommage du fichier " + file.getName() + ".");
 			}
 		}

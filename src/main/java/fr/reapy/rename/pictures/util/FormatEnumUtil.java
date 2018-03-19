@@ -1,7 +1,7 @@
-package fr.reapy.renamePictures.util;
+package fr.reapy.rename.pictures.util;
 
-import fr.reapy.renamePictures.enumeration.FormatPicturesEnum;
-import fr.reapy.renamePictures.enumeration.FormatVideosEnum;
+import fr.reapy.rename.pictures.enumeration.FormatPicturesEnum;
+import fr.reapy.rename.pictures.enumeration.FormatVideosEnum;
 
 /**
  * Service for the FormatEnumeration.

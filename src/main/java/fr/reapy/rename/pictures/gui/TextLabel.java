@@ -1,4 +1,4 @@
-package fr.reapy.renamePictures.gui;
+package fr.reapy.rename.pictures.gui;
 
 import javax.swing.JLabel;
 

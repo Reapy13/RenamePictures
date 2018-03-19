@@ -1,4 +1,4 @@
-package fr.reapy.renamePictures.gui;
+package fr.reapy.rename.pictures.gui;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;

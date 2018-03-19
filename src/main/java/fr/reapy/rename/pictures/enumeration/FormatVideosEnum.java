@@ -1,4 +1,4 @@
-package fr.reapy.renamePictures.enumeration;
+package fr.reapy.rename.pictures.enumeration;
 
 /**
  * Enumeration of the accepted videos format to rename.
